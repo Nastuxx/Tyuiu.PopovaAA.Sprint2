@@ -1,18 +1,21 @@
-using Tyuiu.PopovaAA.Sprint2.Task0.V28.Lib;
-namespace Tyuiu.PopovaAA.Sprint2.Task0.V28.Test
+using Tyuiu.PopovaAA.Sprint2.Task1.V12.Lib;
+namespace Tyuiu.PopovaAA.Sprint2.Task1.V12.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetCompareOperations()
+        public void ValidGetLogicOperations()
         {
             DataService ds = new DataService();
-            int x = 111;
-            int y = 735;
+            int a = 152;
+            int b = 116;
+            int c = 887;
+            int d = 556;
             bool[] res = new bool[6];
-            res = ds.GetCompareOperations(x, y);
-            bool[] wait = new bool[6] { false, false, false, false, false, false };
+            res = ds.GetLogicOperations(a, b, c, d);
+            bool[] wait = new bool[6] {true, true, true, false, true, false};
+
             CollectionAssert.AreEqual(wait, res);
         }
     }
