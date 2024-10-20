@@ -1,22 +1,20 @@
-using Tyuiu.PopovaAA.Sprint2.Task1.V12.Lib;
-namespace Tyuiu.PopovaAA.Sprint2.Task1.V12.Test
+using Tyuiu.PopovaAA.Sprint2.Task2.V20.Lib;
+namespace Tyuiu.PopovaAA.Sprint2.Task2.V20.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetLogicOperations()
+        public void ValidCheckDotInShadedArea()
         {
             DataService ds = new DataService();
-            int a = 152;
-            int b = 116;
-            int c = 887;
-            int d = 556;
-            bool[] res = new bool[6];
-            res = ds.GetLogicOperations(a, b, c, d);
-            bool[] wait = new bool[6] {true, true, true, false, true, false};
+            int x = 10;
+            int y = 13;
 
-            CollectionAssert.AreEqual(wait, res);
+            bool res = ds.CheckDotInShadedArea(x, y);
+            bool wait = true;
+
+            Assert.AreEqual(wait, res);
         }
     }
 }
