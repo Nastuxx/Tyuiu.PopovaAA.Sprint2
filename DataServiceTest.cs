@@ -1,29 +1,36 @@
-using Tyuiu.PopovaAA.Sprint2.Task4.V15.Lib;
-namespace Tyuiu.PopovaAA.Sprint2.Task4.V15.Test
+using Tyuiu.PopovaAA.Sprint2.Task5.V2.Lib;
+namespace Tyuiu.PopovaAA.Sprint2.Task5.V2.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidCondition1()
+        public void ValidFindSeason()
         {
             DataService ds = new DataService();
-            double x = 1;
-            double y = 1;
-            double res = ds.Calculate(x, y);
-            double wait = 5;
-            Assert.AreEqual(wait, res);
-        }
+            
+            Assert.AreEqual("Зима", ds.FindMonthSeason(1));
+            Assert.AreEqual("Зима", ds.FindMonthSeason(2));
+            Assert.AreEqual("Весна", ds.FindMonthSeason(3));
+            Assert.AreEqual("Весна", ds.FindMonthSeason(4));
+            Assert.AreEqual("Весна", ds.FindMonthSeason(5));
+            Assert.AreEqual("Лето", ds.FindMonthSeason(6));
+            Assert.AreEqual("Лето", ds.FindMonthSeason(7));
+            Assert.AreEqual("Лето", ds.FindMonthSeason(8));
+            Assert.AreEqual("Осень", ds.FindMonthSeason(9));
+            Assert.AreEqual("Осень", ds.FindMonthSeason(10));
+            Assert.AreEqual("Осень", ds.FindMonthSeason(11));
+            Assert.AreEqual("Зима", ds.FindMonthSeason(12));
 
-        [TestMethod]
-        public void ValidCondition2()
-        {
-            DataService ds = new DataService();
-            double x = 4;
-            double y = 441;
-            double res = ds.Calculate(x, y);
-            double wait = 1.134;
-            Assert.AreEqual(wait, res);
+            Assert.ThrowsException<ArgumentException>(() =>
+                {
+                ds.FindMonthSeason(-1);
+                });
+
+            Assert.ThrowsException<ArgumentException>(() =>
+            {
+                ds.FindMonthSeason(13);
+            });
         }
     }
 }
