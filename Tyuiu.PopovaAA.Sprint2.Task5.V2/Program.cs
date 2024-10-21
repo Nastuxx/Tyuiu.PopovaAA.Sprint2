@@ -26,6 +26,7 @@ namespace Tyuiu.PopovaAA.Sprint2.Task5.V2
                 res = "Время года: " + ds.FindMonthSeason(numMonth);
             }
 
+
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                                *");
             Console.WriteLine("*****************************************************************************");
