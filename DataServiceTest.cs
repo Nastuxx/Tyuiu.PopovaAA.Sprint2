@@ -1,36 +1,19 @@
-using Tyuiu.PopovaAA.Sprint2.Task5.V2.Lib;
-namespace Tyuiu.PopovaAA.Sprint2.Task5.V2.Test
+using Tyuiu.PopovaAA.Sprint2.Task7.V3.Lib;
+namespace Tyuiu.PopovaAA.Sprint2.Task7.V3.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidFindSeason()
+        public void ValidCheckDotInShadedArea()
         {
             DataService ds = new DataService();
-            
-            Assert.AreEqual("зима", ds.FindMonthSeason(1));
-            Assert.AreEqual("зима", ds.FindMonthSeason(2));
-            Assert.AreEqual("весна", ds.FindMonthSeason(3));
-            Assert.AreEqual("весна", ds.FindMonthSeason(4));
-            Assert.AreEqual("весна", ds.FindMonthSeason(5));
-            Assert.AreEqual("лето", ds.FindMonthSeason(6));
-            Assert.AreEqual("лето", ds.FindMonthSeason(7));
-            Assert.AreEqual("лето", ds.FindMonthSeason(8));
-            Assert.AreEqual("осень", ds.FindMonthSeason(9));
-            Assert.AreEqual("осень", ds.FindMonthSeason(10));
-            Assert.AreEqual("осень", ds.FindMonthSeason(11));
-            Assert.AreEqual("зима", ds.FindMonthSeason(12));
+            double x = 0.5;
+            double y = 0.6;
 
-            Assert.ThrowsException<ArgumentException>(() =>
-                {
-                ds.FindMonthSeason(-1);
-                });
-
-            Assert.ThrowsException<ArgumentException>(() =>
-            {
-                ds.FindMonthSeason(13);
-            });
+            bool res = ds.CheckDotInShadedArea(x, y);
+            bool wait = true;
+            Assert.AreEqual(wait, res);
         }
     }
 }
